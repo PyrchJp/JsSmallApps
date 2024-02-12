@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Grade Calculator</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="my-4">Grade Calculator</h2>
+
+        <div class="form-group">
+            <label for="history">History:</label>
+            <input id="history" type="number" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="english">English:</label>
+            <input id="english" type="number" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="math">Math:</label>
+            <input id="math" type="number" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="science">Science:</label>
+            <input id="science" type="number" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="art">Art:</label>
+            <input id="art" type="number" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="music">Music:</label>
+            <input id="music" type="number" class="form-control">
+        </div>
+
+        <button onclick="calculateAverage()" class="btn btn-primary">Calculate Average</button>
+
+        <p id="average" class="my-4"></p>
+    </div>
+
+    <script>
+        function calculateAverage() {
+            let history = document.getElementById("history").value;
+            let english = document.getElementById("english").value;
+            let math = document.getElementById("math").value;
+            let science = document.getElementById("science").value;
+            let art = document.getElementById("art").value;
+            let music = document.getElementById("music").value;
+
+            let average = (parseFloat(history) + parseFloat(english) + parseFloat(math) + parseFloat(science) + parseFloat(art) + parseFloat(music)) / 6;
+
+            document.getElementById("average").innerHTML = "Your average grade is " + average.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>
