@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="my-4">EMI Calculator</h2>
+
+        <div class="form-group">
+            <label for="loanAmount">Loan Amount:</label>
+            <input id="loanAmount" type="number" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="interestRate">Annual Interest Rate:</label>
+            <input id="interestRate" type="number" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="loanTerm">Loan Term (years):</label>
+            <input id="loanTerm" type="number" class="form-control">
+        </div>
+
+        <button onclick="calculateEMI()" class="btn btn-primary">Calculate EMI</button>
+
+        <p id="emi" class="my-4"></p>
+    </div>
+
+    <script>
+        function calculateEMI() {
+            var a = document.getElementById("loanAmount").value;
+            var b = document.getElementById("interestRate").value / 100 / 12;
+            var c = document.getElementById("loanTerm").value * 12;
+
+            var emi = (a * b * Math.pow(1 + b, c)) / (Math.pow(1 + b, c) - 1);
+
+            document.getElementById("emi").innerHTML = "Your monthly EMI is " + Math.round(emi);
+        }
+    </script>
+</body>
+
+</html>
