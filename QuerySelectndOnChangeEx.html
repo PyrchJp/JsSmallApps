@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>Addition</h1>
+
+    <form>
+      <div class="form-group">
+        <label for="Number 1">Enter number 1</label>
+        <input class="form-control" id="num1" onchange="addNumbers()" />
+      </div>
+      <div class="form-group">
+        <label for="Number 2">Enter number 2</label>
+        <input class="form-control" id="num2" onchange="addNumbers()" />
+      </div>
+    </form>
+
+    <div id="display"><h3></h3></div>
+
+    <script>
+      function addNumbers() {
+        const number1 = parseFloat(document.querySelector("#num1").value);
+        const number2 = parseFloat(document.querySelector("#num2").value);
+
+        const addition = number1 + number2;
+
+        //display the result
+        document.querySelector("#display").innerHTML = addition;
+      }
+    </script>
+  </body>
+</html>
